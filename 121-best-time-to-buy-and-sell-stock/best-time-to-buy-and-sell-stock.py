@@ -1,7 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        profits = []
-        profits.append(0)
+        profit = 0
         big = prices[0]
         smo = prices[0]
         for i in prices:
@@ -10,5 +9,5 @@ class Solution:
                 big = i
             elif i> big:
                 big = i
-                profits.append(big-smo)
-        return max(profits)
+                profit = max(profit, big-smo)
+        return profit
