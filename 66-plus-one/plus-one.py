@@ -1,7 +1,12 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        a = int("".join(map(str, digits)))
-        a += 1
-        digits = list(str(a))
-        digits = [int(i) for i in digits]
+        carry = 1
+        for i in range(len(digits) - 1, -1, -1):
+            total = digits[i] + carry
+            carry = total // 10
+            digits[i] = total % 10
+
+        if carry:
+            digits.insert(0, carry)
+
         return digits
