@@ -1,0 +1,1 @@
+<h2>find-greatest-common-divisor-of-array Notes</h2><hr>using built in gcd
