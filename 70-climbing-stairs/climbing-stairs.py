@@ -1,9 +1,14 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-      prev = 1
-      prev2 = 0        
-      for i in range(1, n+1):
-          curi = prev + prev2
-          prev2 = prev
-          prev = curi
-      return prev 
+      mem = {}
+      return self.helper(n, mem)
+    def helper(self, n, mem) -> int:
+      if n not in mem:
+        if n == 1:
+          mem[n] = 1
+        elif n == 2:
+          mem[n] = 2
+        else:
+          res = self.helper(n-1, mem) + self.helper(n-2, mem)
+          mem[n] = res
+      return mem[n]
