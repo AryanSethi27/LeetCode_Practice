@@ -3,9 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        a = m-1
-        b = n-1
-        c = m+n-1
+        a, b, c = m-1, n-1, m+n-1
+        
         while b>=0:
             if a >= 0 and nums1[a] > nums2[b]:
                 nums1[c] = nums1[a]
