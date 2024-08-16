@@ -4,7 +4,6 @@ SELECT
 FROM 
     activity
 WHERE 
-    activity_date + INTERVAL 30 DAY > '2019-07-27'
-    AND activity_date <= '2019-07-27'
+    activity_date > "2019-06-27" AND activity_date <= "2019-07-27"
 GROUP BY 
     activity_date;
